@@ -192,4 +192,8 @@ If an issue hasn't got someone assigned to it, and there's no existing PR for th
 
   ![Screenshot showing the blame button on GitHub](/images/githubBlame.png)
 
+  [[images/githubBlame.png]]
+  <img src="images/githubBlame.png">
+  <figure><<img src="images/githubBlame.png"><figcaption>image caption</figcaption></figure>
+
 * **Important** PRs marked with the “critical” label need to be tested in the backup server before being merged. For this, one of the release coordinators (with access to deploy) should checkout a new branch from develop, merge the branch from the PR into the new branch, and initiate deployment to the backup server from this branch. The PR author should give specific testing instructions for the changes (like which job to run, what the expected output is, etc) and the coordinator should verify the same. Once successfully tested, the PR should be merged into develop. This is to prevent cases like exploration migrations which can result in data corruption (as it will auto-migrate) if the migration isn’t safe. The "critical" label needs to be applied on PRs that change data validation checks, and other possibly critical changes which could affect production data.
